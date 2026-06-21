@@ -1,0 +1,24 @@
+# Maintainer roster for Dragonfly
+# Documentation: https://github.com/cncf/automation/tree/main/utilities/dot-project
+
+
+#  Maintainers: Please connect your GitHub handle to your LFID on openprofile.dev to enable automatic access to CNCF resources. The system will use your primary email address for setup.
+maintainers:
+  - project_id: "dragonfly"
+    org: "dragonflyoss"
+    teams:
+      - name: "project-maintainers"
+        members:
+          - gaius-qi
+          - yyzai384
+          - bergwolf
+          - chlins
+          - hyy0322
+          - CormickKneey
+          - yxxhero
+          - fcgxz2003
+          - mingcheng
+          - imeoer
+          - BraveY
+          - Fricounet
+          - CooooolFrog
