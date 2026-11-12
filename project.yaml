@@ -28,7 +28,7 @@ repositories:
 
 website: "https://d7y.io/"
 
-artwork: "https://landscape.cncf.io/logos/dragonfly.svg"
+artwork: "https://raw.githubusercontent.com/cncf/artwork/main/projects/dragonfly/icon/color/dragonfly-icon-color.svg"
 
 adopters:
   path: "https://github.com/dragonflyoss/dragonfly/blob/main/ADOPTERS.md"
