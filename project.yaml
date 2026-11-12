@@ -1,23 +1,27 @@
 # .project metadata for Dragonfly
 # Documentation: https://github.com/cncf/automation/tree/main/utilities/dot-project
 
-# TODO: Add package_managers if distributed via registries
-
 schema_version: "1.0.0"
 slug: "dragonfly"
 name: "Dragonfly"
 description: "Delivers efficient, stable, and secure data distribution and acceleration powered by P2P technology, with an optional content‑addressable filesystem that accelerates OCI container launch."
 type: "project"
-project_lead: "gaius-qi" # TODO: AUTO-DETECTED — please verify
-slack_channels: # TODO: AUTO-DETECTED — please verify the channel(s) below
+project_lead: "gaius-qi"
+slack_channels:
   - name: "#dragonfly"
     link: "https://cloud-native.slack.com/messages/dragonfly/"
     primary: true
 
 maturity_log:
-  - phase: "graduated"
+  - phase: "sandbox"
     date: "2018-11-13T00:00:00Z"
-    issue: "https://github.com/cncf/toc/issues/1947" # TODO: AUTO-DETECTED — please verify
+    issue: "https://github.com/cncf/toc/pull/162"
+  - phase: "incubating"
+    date: "2020-04-09T00:00:00Z"
+    issue: "https://github.com/cncf/toc/pull/276"
+  - phase: "graduated"
+    date: "2026-01-14T00:00:00Z"
+    issue: "https://github.com/cncf/toc/issues/1947"
 
 repositories:
   - "https://github.com/dragonflyoss/dragonfly"
@@ -29,10 +33,26 @@ artwork: "https://landscape.cncf.io/logos/dragonfly.svg"
 adopters:
   path: "https://github.com/dragonflyoss/dragonfly/blob/main/ADOPTERS.md"
 
-
-# TODO: Add package manager identifiers if your project is distributed via registries
-# package_managers:
-#   docker: "dragonflyoss/dragonfly"
+package_managers:
+  docker:
+    - "dragonflyoss/manager"
+    - "dragonflyoss/scheduler"
+    - "dragonflyoss/client"
+    - "dragonflyoss/dfinit"
+    - "dragonflyoss/injector"
+  helm: "dragonfly/dragonfly" # Repository: https://dragonflyoss.github.io/helm-charts/
+  cargo:
+    - "dragonfly-api"
+    - "dragonfly-client"
+    - "dragonfly-client-backend"
+    - "dragonfly-client-config"
+    - "dragonfly-client-core"
+    - "dragonfly-client-init"
+    - "dragonfly-client-metric"
+    - "dragonfly-client-request"
+    - "dragonfly-client-storage"
+    - "dragonfly-client-util"
+    - "dragonfly-hashring"
 
 social:
   twitter: "https://twitter.com/dragonfly_oss"
@@ -53,8 +73,8 @@ legal:
   license:
     path: "https://github.com/dragonflyoss/dragonfly/blob/main/LICENSE"
   identity_type:
-    has_dco: true # AUTO-DETECTED — please verify
-    has_cla: false # AUTO-DETECTED — please verify
+    has_dco: true
+    has_cla: false
     dco_url:
       path: "https://developercertificate.org/"
 
