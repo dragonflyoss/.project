@@ -12,6 +12,7 @@ This repository holds the canonical metadata for [Dragonfly](https://d7y.io/) an
 | `CODEOWNERS` | Ensures PRs to this repo require maintainer approval |
 | `.github/workflows/validate.yaml` | CI — validates `project.yaml` and `maintainers.yaml` on every PR |
 | `.github/workflows/update-landscape.yml` | Automatically proposes landscape updates when `project.yaml` changes |
+| `.github/workflows/check-links.yml` | Every other week, checks that all links and maintainer handles still resolve and opens an issue if not |
 
 ## Keeping metadata up to date
 
