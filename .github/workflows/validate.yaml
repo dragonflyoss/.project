@@ -2,44 +2,44 @@ name: Validate Project Metadata
 
 on:
   pull_request:
-    paths:
-      - 'org.yaml'
-      - 'project.yaml'
-      - 'maintainers.yaml'
-      - '*/project.yaml'
-      - '*/maintainers.yaml'
   push:
     branches: [main]
     paths:
-      - 'org.yaml'
-      - 'project.yaml'
-      - 'maintainers.yaml'
-      - '*/project.yaml'
-      - '*/maintainers.yaml'
+      - ".github/workflows/validate.yaml"
+      - "org.yaml"
+      - "project.yaml"
+      - "maintainers.yaml"
+      - "*/project.yaml"
+      - "*/maintainers.yaml"
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   validate-project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7.0.1
         with:
+          persist-credentials: false
           fetch-depth: 0
 
-      - uses: cncf/automation/.github/actions/validate-project@85e0bcd298817a6e26e286d6b22615f8c81b4e4b
+      - uses: cncf/automation/.github/actions/validate-project@main
         with:
-          check_links: 'true'
+          check_links: "true"
 
   validate-maintainers:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7.0.1
         with:
+          persist-credentials: false
           fetch-depth: 0
 
-      - uses: cncf/automation/.github/actions/validate-maintainers@85e0bcd298817a6e26e286d6b22615f8c81b4e4b
+      - uses: cncf/automation/.github/actions/validate-maintainers@main
         with:
-          verify_maintainers: 'false'
-          check_links: 'true'
+          verify_maintainers: "false"
+          check_links: "true"
         env:
           LFX_AUTH_TOKEN: ${{ secrets.LFX_AUTH_TOKEN }}

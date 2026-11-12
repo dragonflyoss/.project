@@ -21,12 +21,12 @@ jobs:
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@v7.0.1
         if: steps.biweekly.outputs.skip != 'true'
         with:
           persist-credentials: false
 
-      - uses: cncf/automation/.github/actions/check-links@85e0bcd298817a6e26e286d6b22615f8c81b4e4b
+      - uses: cncf/automation/.github/actions/check-links@main
         if: steps.biweekly.outputs.skip != 'true'
         with:
           label: 'broken-links'
